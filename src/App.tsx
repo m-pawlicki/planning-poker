@@ -1,13 +1,13 @@
-//import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
 
-function Card({value, onCardClick}) {
+function Card({value, onCardClicked}) {
     return (
     <>
-    <div className="card-container" id="container">
-      <div className="card" id="card">
-        <div className="card-front" id="back"></div>
-        <div className="card-back" id="face" onClick={onCardClick}><h1>{value}</h1></div>
+    <div className="card-container">
+      <div className="card">
+        <div className="card-front"></div>
+        <div className="card-back" id={value} onClick={onCardClicked}><h1>{value}</h1></div>
       </div>
     </div>
     </>
@@ -15,31 +15,35 @@ function Card({value, onCardClick}) {
 }
 
 function Hand() {
+
   return (
     <>
       <div className="card-hand">
-        <Card value={0} onCardClick={() => handleClick()} />
-        <Card value={1} onCardClick={() => handleClick()} />
-        <Card value={2} onCardClick={() => handleClick()} />
-        <Card value={3} onCardClick={() => handleClick()} />
-        <Card value={5} onCardClick={() => handleClick()} />
-        <Card value={8} onCardClick={() => handleClick()} />
-        <Card value={13} onCardClick={() => handleClick()} />
-        <Card value={"?"} onCardClick={() => handleClick()} />
-        <Card value={"∞"} onCardClick={() => handleClick()} />
-        <Card value={"☕"} onCardClick={() => handleClick()} />
+        <Card value={"0"} onCardClicked={() => handleClick("0")} />
+        <Card value={"1"} onCardClicked={() => handleClick("1")} />
+        <Card value={"2"} onCardClicked={() => handleClick("2")} />
+        <Card value={"3"} onCardClicked={() => handleClick("3")} />
+        <Card value={"5"} onCardClicked={() => handleClick("5")} />
+        <Card value={"8"} onCardClicked={() => handleClick("8")} />
+        <Card value={"13"} onCardClicked={() => handleClick("13")} />
+        <Card value={"?"} onCardClicked={() => handleClick("?")} />
+        <Card value={"☕"} onCardClicked={() => handleClick("☕")} />
       </div>
     </>
   )
 }
 
 
-function handleClick() {
-  const cardElement = document.getElementById("container");
-  cardElement?.classList.toggle("card-choose");
+function handleClick(value: string) {
+
+  const cardElement = document.getElementById(value);
+  cardElement?.classList.toggle("card-pick");
+
 }
 
 export default function App() {
+
+   const [cardPicked, setCardPicked] = useState(null); 
 
   return (
     <>

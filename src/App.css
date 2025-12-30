@@ -2,58 +2,57 @@
   width: 100px;
   height: 150px;
   padding: 5px;
-  perspective: 400px;
-}
-
-.card-container:hover > .card {
-  cursor: pointer;
-  transform: rotateY(180deg);
 }
 
 .card {
   height: 100%;
   width: 100%;
   position: relative;
-  transition: transform 500ms;
   transform-style: preserve-3d;
 }
 
-.card-front,
+.card-face,
 .card-back {
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
   border-style: solid;
   border-width: 2px;
-    border-color: #2b2453;
+  border-color: #2b2453;
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
   position: absolute;
-  backface-visibility: hidden;
-}
-
-.card-front {
-  background-color: darkslateblue;
+  cursor: pointer;
 }
 
 .card-back {
+  background-color: darkslateblue;
+}
+
+.card-face {
+  transition: all 500ms ease;
   background-color: #efefef;
   border-color: slategray;
-  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
-  font-size: large;
+  font-size: xx-large;
 }
 
 .card-hand {
   display: inline-flex;
 }
 
-.card-pick {
-  transform: none !important;
-  animation: none !important;
+input {
+  opacity: 0;
+  position: absolute;
+}
+
+input:checked + label {
+  transform: translateY(-20px);
+  transition: all 500ms ease;
+  font-weight: bold;
   -webkit-box-shadow:0px 0px 5px 5px rgba(70,46,255,0.5);
   -moz-box-shadow: 0px 0px 5px 5px rgba(70,46,255,0.5);
   box-shadow: 0px 0px 5px 5px rgba(70,46,255,0.5);

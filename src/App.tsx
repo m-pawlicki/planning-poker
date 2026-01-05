@@ -39,6 +39,9 @@ function Hand() {
 function Table() {
   return (
     <>
+      <svg width="500" height="250">
+        <rect width="500" height="250" rx="15" ry="15" fill="sienna" stroke="saddlebrown" strokeWidth="5" />
+      </svg> 
     </>
   )
 }
@@ -49,7 +52,12 @@ export default function App() {
 
   return (
     <>
-    <Hand />
+        <div className="table">
+          <Table />
+        </div>
+        <div className="hand">
+          <Hand />
+        </div>
     </>
   )
 }

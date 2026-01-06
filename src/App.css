@@ -42,6 +42,7 @@
 
 .card-hand {
   display: inline-flex;
+  margin-bottom: 10px;
 }
 
 input {
@@ -58,10 +59,7 @@ input:checked + label {
   box-shadow: 0px 0px 5px 5px rgba(70,46,255,0.5);
 }
 
-.table, .hand {
-  width: 100%;
-  height: 100%;
-  padding: 100px;
-  display: flex;
-  justify-content: center;
+.table-container {
+  padding: auto;
+  margin-bottom: 10px;
 }

@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 body {
@@ -11,8 +11,8 @@ body {
 
 .parent {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto);
     gap: 25px;
 }
     
@@ -65,4 +65,8 @@ button {
   border-width: 2px;
   border-color: darkslategray;
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+}
+
+.button-div {
+  align-self: center;
 }

@@ -7,7 +7,7 @@ function Card({value}) {
     <>
     <div className="card-container">
       <div className="card">
-        <input type="radio" name="card" id={value} value={value}></input>
+        <input type="radio" name="card" className="card-input" id={value} value={value}></input>
         <label className="card-face" htmlFor={value}>{value}</label>
       </div>
     </div>
@@ -20,6 +20,7 @@ function Card({value}) {
 function Hand() {
   return (
     <>
+    <div className="hand-container">
       <div className="card-hand">
         <Card value={"0"} />
         <Card value={"1"} />
@@ -31,9 +32,10 @@ function Hand() {
         <Card value={"?"} />
         <Card value={"☕"} />
       </div>
-      <div>
+      <div className="button-div">
         <button className="button">Submit</button><button className="button">Skip</button>
       </div>
+    </div>
     </>
   )
 }
@@ -42,14 +44,17 @@ function Hand() {
 function Table() {
   return (
     <>
-    <h2>Current Story:</h2>
+    <div className="story-container">
+      <label htmlFor="story"><h2>Current Story:</h2></label>
+      <input className="story-input" type="text" id="story" name="story" />
+      </div>
     <div className="table-container">
-      <svg width="500" height="250">
-        <rect width="500" height="250" rx="15" ry="15" fill="sienna" stroke="saddlebrown" strokeWidth="5" />
+      <svg className="table" width="900" height="300">
+        <rect width="600" height="300" rx="15" ry="15" fill="sienna" stroke="saddlebrown" strokeWidth="5" />
       </svg>
-    </div>
-    <div>
-      <button className="button">Reveal Cards</button>
+      <div className="button-div">
+        <button className="button">Reveal Cards</button>
+      </div>
     </div>
     </>
   )

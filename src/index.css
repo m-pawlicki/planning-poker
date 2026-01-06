@@ -70,3 +70,15 @@ button {
 .button-div {
   align-self: center;
 }
+
+h1 {
+  color: #444;
+}
+
+h2 {
+  color: #666;
+}
+
+h3 {
+  color: #888;
+}

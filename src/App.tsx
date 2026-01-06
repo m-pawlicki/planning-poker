@@ -49,7 +49,7 @@ function Table() {
       <input className="story-input" type="text" id="story" name="story" />
       </div>
     <div className="table-container">
-      <svg className="table" width="900" height="300">
+      <svg className="table" width="600" height="300">
         <rect width="600" height="300" rx="15" ry="15" fill="sienna" stroke="saddlebrown" strokeWidth="5" />
       </svg>
       <div className="button-div">

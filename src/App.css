@@ -1,6 +1,6 @@
 .card-container {
-  width: 100px;
-  height: 150px;
+  width: 75px;
+  height: 125px;
   padding: 10px;
 }
 
@@ -64,11 +64,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 }
 
 .table {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .hand-container {

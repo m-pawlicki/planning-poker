@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import './App.css'
+import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas)
 
 // A single card
 function Card({value}) {
@@ -30,10 +34,7 @@ function Hand() {
         <Card value={"8"} />
         <Card value={"13"} />
         <Card value={"?"} />
-        <Card value={"☕"} />
-      </div>
-      <div className="button-div">
-        <button className="button">Submit</button><button className="button">Skip</button>
+        <Card value={<FontAwesomeIcon icon="fa-solid fa-mug-hot" />} />
       </div>
     </div>
     </>
@@ -44,17 +45,10 @@ function Hand() {
 function Table() {
   return (
     <>
-    <div className="story-container">
-      <label htmlFor="story"><h2>Current Story:</h2></label>
-      <input className="story-input" type="text" id="story" name="story" />
-      </div>
     <div className="table-container">
       <svg className="table" width="600" height="300">
         <rect width="600" height="300" rx="15" ry="15" fill="sienna" stroke="saddlebrown" strokeWidth="5" />
       </svg>
-      <div className="button-div">
-        <button className="button">Reveal Cards</button>
-      </div>
     </div>
     </>
   )
@@ -64,7 +58,11 @@ function Table() {
 function Header() {
   return (
     <>
-    <h1>Planning Poker</h1>
+    <div className="head-div">
+      <header>
+      <h2>Planning Poker</h2>
+      </header>
+    </div>
     </>
   )
 }
@@ -73,33 +71,41 @@ function Header() {
 function Footer() {
   return (
     <>
-    <sub>fneet (c) 2026</sub>
+    <div className="foot-div">
+      <footer>
+      <sub>Made with <FontAwesomeIcon icon="fa-solid fa-heart" /> Micah Pawlicki 2026</sub>
+      </footer>
+    </div>
     </>
   )
 }
 
-// User list, current voting status, and how they voted (when revealed)
-function Users() {
+// User menu
+function Menu() {
   return (
     <>
-    <h2>Users</h2>
-    <h3>Currently Voting</h3>
-    <br />
-    <h3>Voted</h3>
-    < br />
-    <h3>Skipped</h3>
+    <div className="menu-div">
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-user" /> Nickname</a>
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-binoculars" /> Observe</a>
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-users" /> Participate</a>
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-hashtag" /> Story</a>
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles" /> Reveal</a>
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-arrow-rotate-right" /> Reset</a>
+      <a href="#"><FontAwesomeIcon icon="fa-solid fa-share" /> Share</a>
+    </div>
     </>
   )
 }
 
-// Shows the list of stories, vote status of stories, and comments tied to the current story
+// Shows voting status and results
 function Info() {
   return (
     <>
-    <h2>Info</h2>
-    <h3>Stories</h3>
-    <br />
-    <h3>Comments</h3>
+    <div className="info-div">
+      <p><FontAwesomeIcon icon="fa-solid fa-star" /> Most picked</p><br />
+      <p><FontAwesomeIcon icon="fa-solid fa-bolt" /> Average</p><br />
+      <p><FontAwesomeIcon icon="fa-solid fa-chart-simple" /> Breakdown</p>
+    </div>
     </>
   )
 }
@@ -111,23 +117,19 @@ export default function App() {
   return (
     <>
       <div className="parent">
-        <div className="div-head">
+        <div className="div-top">
           <Header />
         </div>
-        <div className="div-users">
-          <Users />
+        <div className="div-left">
+          <Menu />
         </div>
-        <div className="div-table">
+        <div className="div-mid">
           <Table />
-        </div>
-        <div className="div-cards">
           <Hand />
-        </div>
-        <div className="div-info">
-          <Info />
-        </div>
-        <div className="div-foot">
           <Footer />
+        </div>
+        <div className="div-right">
+          <Info />
         </div>
       </div>
     </>

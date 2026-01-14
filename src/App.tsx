@@ -47,7 +47,7 @@ function Table() {
     <>
     <div className="table-container">
       <svg className="table" width="600" height="300">
-        <rect width="600" height="300" rx="15" ry="15" fill="sienna" stroke="saddlebrown" strokeWidth="5" />
+        <rect width="300" height="150" rx="15" ry="15" fill="grey" />
       </svg>
     </div>
     </>

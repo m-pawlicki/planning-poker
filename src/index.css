@@ -23,16 +23,17 @@ grid-row-gap: 0px;
 .div-right { grid-area: 2 / 5 / 6 / 6; } 
 
 .info-div {
-  align-items: center;
   text-align: right;
+  width: 50%;
+  overflow: hidden;
+  display: block;
 }
 
 .menu-div {
-  align-items: center;
   text-align: left;
-  display:inline-block;
-  width:auto;
+  width: 50%;
   overflow: hidden;
+  display: block;
 }
 
 .foot-div {
@@ -49,20 +50,32 @@ grid-row-gap: 0px;
   justify-content: left;
 }
 
-a {
-  padding: 5px;
+.nav-a {
+  padding: 10px 20px;
+  gap: 10px;
+  width: 100%;
   background-color: transparent;
   text-decoration: none;
-  border:none;
-  display:block;
-  outline: 0;
+  border: none;
+  display: block;
   background-color:#999;
   color:honeydew;
 }
 
-a:hover {
+.nav-a:hover {
   background-color:#666;
   color:honeydew;
+}
+
+.hidden-check {
+  position: absolute;
+  zoom: 2;
+  opacity: 0;
+  width: 50px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 

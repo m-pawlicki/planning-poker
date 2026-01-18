@@ -65,7 +65,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 
 .table {
@@ -84,8 +84,7 @@
 
 .story-container {
   padding: 5px;
-  display: flex;
-  flex-direction: inherit;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
@@ -95,7 +94,20 @@
   padding: auto;
   margin: 10px;
   height: 2em;
-  width: 25%;
+  overflow: hidden;
+  width: 75%;
   border: 1px solid darkslategray;
   border-radius: 4px;
+}
+
+.story-toggle {
+  background-color:#bbb;
+  display: none;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-button {
+  margin: 10px;
 }
